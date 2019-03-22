@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="bg-light">
+    <router-view v-wechat-title="$route.meta.title"/>
   </div>
 </template>
 
@@ -28,5 +28,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+#nprogress .bar {
+  background: red !important;
 }
 </style>

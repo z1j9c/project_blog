@@ -68,6 +68,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         : config.build.index,
       template: 'index.html',
       inject: true,
+      favicon: path.resolve('./blog_log.png'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,

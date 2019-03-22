@@ -1,8 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="javascript:void(0);">My-LOGO</a>
-
+    <router-link class="navbar-brand" :to="{name:'homeIndex',params:{}}">
+      My-LOGO
+    </router-link>
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -28,10 +29,10 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0);">登陆</a>
+          <a class="nav-link" href="javascript:void(0);" @click="eventLogin">登陆</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0);">注册</a>
+          <a class="nav-link" href="javascript:void(0);" @click="eventRegister">注册</a>
         </li>
       </ul>
     </div>
@@ -48,6 +49,20 @@ export default {
     }
   },
   methods: {
+    eventLogin: function () { // 跳转到登陆页面
+      this.$router.push({
+        name: 'userLogin',
+        params: {
+        }
+      })
+    },
+    eventRegister: function () { // 跳转到注册页面
+      this.$router.push({
+        name: 'userRegister',
+        params: {
+        }
+      })
+    }
   }
 }
 $(function () {
